@@ -12,5 +12,33 @@ html {
 }
 
 body {
-  background: #0C0D14;
+  background: #0c0d14;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                 @font-face                                 */
+/* -------------------------------------------------------------------------- */
+@font-face {
+  font-family: "robotoRegular";
+  src: url("/src/fonts/roboto/Roboto-Regular.ttf") format("opentype"), url("/src/fonts/roboto/Roboto-Regular.woff") format("woff"), url("/src/fonts/roboto/Roboto-Regular.woff2") format("woff2");
+}
+@font-face {
+  font-family: "robotoBold";
+  src: url("/src/fonts/roboto/Roboto-Bold.ttf") format("opentype"), url("/src/fonts/roboto/Roboto-Bold.woff") format("woff"), url("/src/fonts/roboto/Roboto-Bold.woff2") format("woff2");
+}
+/* -------------------------------------------------------------------------- */
+/*                                     CSS                                    */
+/* -------------------------------------------------------------------------- */
+* {
+  font-family: "robotoRegular", sans-serif;
+}
+
+header .navbar {
+  background: rgba(33, 34, 51, 0.9);
+}
+header .navbar .navbar-brand {
+  color: #ffffff;
+}
+header .navbar .navbar-nav .nav-item .nav-link {
+  color: #ffffff;
 }/*# sourceMappingURL=main.css.map */
