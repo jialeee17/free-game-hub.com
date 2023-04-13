@@ -16,8 +16,25 @@
 }
 
 /* -------------------------------------------------------------------------- */
+/*                                   Nunito                                   */
+/* -------------------------------------------------------------------------- */
+@font-face {
+    font-family: "nunitoRegular";
+    src: url("/src/fonts/nunito/Nunito-Regular.ttf") format("opentype"),
+        url("/src/fonts/nunito/Nunito-Regular.woff") format("woff"),
+        url("/src/fonts/nunito/Nunito-Regular.woff2") format("woff2")
+}
+
+@font-face {
+    font-family: "nunitoBold";
+    src: url("/src/fonts/nunito/Nunito-Bold.ttf") format("opentype"),
+        url("/src/fonts/nunito/Nunito-Bold.woff") format("woff"),
+        url("/src/fonts/nunito/Nunito-Bold.woff2") format("woff2")
+}
+
+/* -------------------------------------------------------------------------- */
 /*                                     CSS                                    */
 /* -------------------------------------------------------------------------- */
 * {
-    font-family: 'robotoRegular', sans-serif;
+    font-family: 'nunitoBold', 'robotoRegular', sans-serif;
 }
