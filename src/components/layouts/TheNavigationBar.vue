@@ -52,7 +52,7 @@ export default {
     .navbar-brand {
         color: #6842FF;
         font-size: 1.5rem;
-        text-shadow: -0.5px -0.5px 0 #ffffff;
+        // text-shadow: -0.5px -0.5px 0 #ffffff;
     }
 
     .navbar-nav {
