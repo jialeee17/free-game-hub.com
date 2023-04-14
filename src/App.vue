@@ -1,4 +1,6 @@
 <template>
+  <TheScreenLoader />
+
   <div>
     <TheHeader />
 
@@ -9,16 +11,28 @@
 </template>
 
 <script>
+import { onMounted }from 'vue';
 import TheHeader from './components/layouts/TheHeader.vue';
+import TheScreenLoader from './components/layouts/TheScreenLoader.vue';
 
 export default {
   name: 'App',
   components: {
-    TheHeader
+    TheHeader,
+    TheScreenLoader
+  },
+
+  setup() {
+    // Composition API...
+    onMounted(() => {
+      setTimeout(() => {
+        $(".screen").hide();
+      }, 1000);
+    })
   }
 }
 </script>
 
-<style>
+<style lang="scss">
 
 </style>
