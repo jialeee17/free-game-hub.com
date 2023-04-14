@@ -4,7 +4,7 @@
   <div>
     <TheHeader />
 
-    <div class="container-fluid">
+    <div class="container">
       <router-view />
     </div>
   </div>
@@ -17,6 +17,7 @@ import TheScreenLoader from './components/layouts/TheScreenLoader.vue';
 
 export default {
   name: 'App',
+
   components: {
     TheHeader,
     TheScreenLoader

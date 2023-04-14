@@ -16,6 +16,7 @@ export default {
 
 <style lang="scss" scoped>
 .screen {
+    background: #000000;
     display: flex;
     align-items: center;
     position: fixed;
@@ -23,7 +24,6 @@ export default {
     left: 0;
     right: 0;
     bottom: 0;
-    background: #000000;
 
     .loader {
         width: 100%;
