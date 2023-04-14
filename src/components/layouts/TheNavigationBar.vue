@@ -76,6 +76,7 @@ export default {
         .btn {
             &.btn-search {
                 background: #6842FF;
+                border: none;
                 border-radius: 1.875rem;
                 color: #ffffff;
             }
