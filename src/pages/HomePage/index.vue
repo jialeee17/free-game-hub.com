@@ -1,26 +1,30 @@
 <template>
     <!-- PC Games -->
-    <div class="row">
-        <div class="col">
-            <h2>PC Games</h2>
-            <!-- <img :src="gameList[0].thumbnail" alt="">
-            <p class="text-primary">{{ gameList[0].title }}</p> -->
-        </div>
-    </div>
-
-    <!-- Browser Games -->
-    <div class="row">
-        <div class="col">
-            <h2>Browser Games</h2>
+    <div class="section section-recommended-games py-4">
+        <div class="row">
+            <div class="col">
+                <h2 class="title text-white">Recommended for you</h2>
+                <AppSwiper :gameList="gameList"/>
+            </div>
         </div>
     </div>
 </template>
 
 <script>
 import { ref, onMounted } from 'vue';
+import Swiper, { Grid, Pagination } from 'swiper';
+import 'swiper/css';
+
 import freeToGameRepo from '../../api/freeToGameRepository.js';
+import AppSwiper from '../../components/ui/AppSwiper.vue';
 
 export default {
+    name: 'HomePage',
+
+    components: {
+        AppSwiper
+    },
+
     setup() {
         /* -------------------------------------------------------------------------- */
         /*                                    NOTE                                    */
@@ -65,6 +69,21 @@ export default {
                     console.error(e);
                 })
 
+            const swiper = new Swiper('.swiper', {
+                // Optional parameters
+                // direction: 'vertical',
+                // loop: true,
+                grid: {
+                    rows: 3,
+                    cols: 3
+                },
+                // Navigation arrows
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+            });
+
         })
 
         // expose to template and other options API hooks
@@ -77,6 +96,12 @@ export default {
 
 </script>
 
-<style>
-
+<style lang="scss" scoped>
+.section {
+    &.section-recommended-games {
+        .title {
+            font-size: 1.125rem;
+        }
+    }
+}
 </style>
