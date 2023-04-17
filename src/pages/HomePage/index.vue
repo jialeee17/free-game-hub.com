@@ -2,9 +2,17 @@
     <!-- PC Games -->
     <div class="section section-recommended-games py-4">
         <div class="row">
-            <div class="col">
-                <h2 class="title text-white">Recommended for you</h2>
-                <AppSwiper :gameList="gameList"/>
+            <h2 class="title text-white">Recommended for you</h2>
+            <div class="col" v-for="game in gameList" :key="game.id">
+                <!-- <pre style="background: white;">
+                    {{ gameList }}
+                </pre> -->
+                <img :src="game.thumbnail" alt="">
+                <div style="background: white;">
+                    <p>Game: {{ game.title }}</p>
+                    <p>Description: {{ game.short_description }}</p>
+                </div>
+                <!-- <AppSwiper :gameList="gameList"/> -->
             </div>
         </div>
     </div>
@@ -55,34 +63,38 @@ export default {
             // thumbnail: "https://www.freetogame.com/g/540/thumbnail.jpg"
             // title: "Overwatch 2"
 
-            const response = freeToGameRepo.getGameList();
+            freeToGameRepo.getGameList().then(response => {
 
-            response
-                .then((response) => {
-                    if (response.status === 200) {
-                        if (response.data) {
-                            gameList.value = response.data;
-                        }
-                    }
-                })
-                .catch((e) => {
-                    console.error(e);
-                })
+                            if (response.status === 200) {
 
-            const swiper = new Swiper('.swiper', {
-                // Optional parameters
-                // direction: 'vertical',
-                // loop: true,
-                grid: {
-                    rows: 3,
-                    cols: 3
-                },
-                // Navigation arrows
-                navigation: {
-                    nextEl: '.swiper-button-next',
-                    prevEl: '.swiper-button-prev',
-                },
-            });
+                                if (response.data) {
+
+                                    gameList.value = response.data;
+
+                                }
+
+                            }
+
+                        }).catch(error => {
+
+                            console.error(error);
+
+                        });
+
+            // const swiper = new Swiper('.swiper', {
+            //     // Optional parameters
+            //     // direction: 'vertical',
+            //     // loop: true,
+            //     grid: {
+            //         rows: 3,
+            //         cols: 3
+            //     },
+            //     // Navigation arrows
+            //     navigation: {
+            //         nextEl: '.swiper-button-next',
+            //         prevEl: '.swiper-button-prev',
+            //     },
+            // });
 
         })
 

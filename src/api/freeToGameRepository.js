@@ -17,19 +17,39 @@ import axios from 'axios';
 const API_URL = 'https://www.freetogame.com/api';
 
 export default {
-    getGameList(params) {
-        return axios.get(`${API_URL}/games`, {
-                params: params
-            })
-            .then(response => response)
-            .catch(error => error);
+    getGameList: async (params = {}) => {
+
+        try {
+
+            const response = await axios.get(`${API_URL}/games`, {
+                        params: params
+                    });
+
+            return response;
+
+        } catch (error) {
+
+            console.error(error);
+
+        }
+
     },
 
-    filterGameList(params) {
-        return axios.get(`${API_URL}/filter`, {
+    filterGameList: async (params = {}) => {
+
+        try {
+
+            const response = await axios.get(`${API_URL}/filter`, {
                 params: params
-            })
-            .then(response => response)
-            .catch(error => error);
+            });
+
+            return response;
+
+        } catch (error) {
+
+            console.error(error);
+
+        }
+
     },
 }
